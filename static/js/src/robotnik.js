@@ -2,6 +2,7 @@
 
 import robotnikBlocks from './robotnik-blocks.js';
 import robotnikGenerator from './robotnik-generator.js';
+import CodeMirror from 'codemirror';
 
 var RunningWindow = {
   show: function() {
@@ -47,8 +48,10 @@ $( document ).ready(function() {
     trashcan: true
   });
 
-  var editor = ace.edit("code");
-  editor.getSession().setMode("ace/mode/javascript");
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    mode: 'javascript'
+  });
 
   RunningWindow.init();
 
@@ -191,8 +194,8 @@ $( document ).ready(function() {
     $('#code').show();
     $('#blockly').hide();
     $('#docs').show();
-    editor.setValue( generateCode() );
-    editor.gotoLine(1);
+    editor.setValue(generateCode());
+    editor.firstLine();
 
   });
 

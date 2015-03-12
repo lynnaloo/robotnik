@@ -33,6 +33,15 @@ gulp.task('staticlibs', function () {
     .on('error', console.log);
 });
 
+// TODO: Add Bootstrap styles (from npm module)
+gulp.task('styles', function () {
+  return gulp.src([
+    './node_modules/codemirror/lib/codemirror.css'
+  ])
+  .pipe(gulp.dest('./static/css'))
+  .on('error', console.log);
+});
+
 gulp.task('bundle', function() {
   return bundler
     .add(es6ify.runtime)
