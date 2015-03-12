@@ -49,7 +49,7 @@ $( document ).ready(function() {
     trashcan: true
   });
 
-  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
     lineNumbers: true,
     mode: 'javascript'
   });
@@ -80,9 +80,9 @@ $( document ).ready(function() {
       RunningWindow.show();
     }, 1000);
     if ( $('#code-tab').parent().is('.active') ) {
-      sendMessage( 'code', editor.getValue() );
+      sendMessage( 'code-editor', editor.getValue() );
     } else {
-      sendMessage( 'code', generateCode() );
+      sendMessage( 'code-editor', generateCode() );
     }
   });
 
