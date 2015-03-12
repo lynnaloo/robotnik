@@ -53,4 +53,4 @@ gulp.task('bundle', function() {
     .pipe(gulp.dest('./static/js/dest'));
 });
 
-gulp.task('default', ['icons', 'staticlibs', 'bundle']);
+gulp.task('default', ['icons', 'styles', 'staticlibs', 'bundle']);
