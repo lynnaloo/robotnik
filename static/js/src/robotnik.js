@@ -3,6 +3,7 @@
 import robotnikBlocks from './robotnik-blocks.js';
 import robotnikGenerator from './robotnik-generator.js';
 import CodeMirror from 'codemirror';
+import 'codemirror/mode/javascript/javascript';
 
 var RunningWindow = {
   show: function() {
